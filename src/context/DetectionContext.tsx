@@ -53,9 +53,9 @@ export const DetectionProvider: React.FC<DetectionProviderProps> = ({ children }
   const [detections, setDetections] = useState<Detection[]>([]);
   const [alerts, setAlerts] = useState<Alert[]>([]);
   const [stats, setStats] = useState<Stats>({
-    totalDetections: 1247,
-    complianceRate: 87,
-    alertsToday: 23,
+    totalDetections: 0,
+    complianceRate: 100,
+    alertsToday: 0,
     uptime: 0
   });
 

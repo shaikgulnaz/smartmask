@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Header from './components/Header';
-import CameraFeed from './components/CameraFeed';
+import RealTimeCameraFeed from './components/RealTimeCameraFeed';
+import ConnectionStatus from './components/ConnectionStatus';
 import StatusPanel from './components/StatusPanel';
 import StatsPanel from './components/StatsPanel';
 import AlertPanel from './components/AlertPanel';
@@ -14,6 +15,16 @@ function App() {
         <div className="container mx-auto px-4 py-6">
           <Header />
           
+          {/* Connection Status */}
+          <motion.div 
+            className="mt-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <ConnectionStatus />
+          </motion.div>
+          
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
             {/* Main Camera Feed */}
             <motion.div 
@@ -22,7 +33,7 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <CameraFeed />
+              <RealTimeCameraFeed />
             </motion.div>
             
             {/* Side Panel */}
